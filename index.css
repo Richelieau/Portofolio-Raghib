@@ -1,0 +1,188 @@
+/* Reset dasar */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: all 0.3s ease-in-out;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Warna dasar hitam putih */
+body {
+  background-color: #ffffff;
+  color: #000000;
+  line-height: 1.6;
+  padding: 0;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  background-color: #000000;
+  color: #ffffff;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header h1 {
+  font-size: 1.8em;
+}
+
+.header li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.header a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: bold;
+  position: relative;
+}
+
+.header a::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background: #ffffff;
+  bottom: -4px;
+  left: 0;
+  transition: 0.3s ease-in-out;
+}
+
+.header a:hover::after {
+  width: 100%;
+}
+
+/* About me */
+.about-container {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.profile-photo {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #000;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.about-text {
+  flex: 1;
+  font-size: 1.1em;
+  color: #222;
+}
+
+/* Projects */
+.projects {
+  background-color: #f9f9f9;
+  padding: 80px 50px;
+  color: #000;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.card {
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 16px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  padding: 25px;
+  width: 300px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+}
+
+.card h3 {
+  margin-bottom: 10px;
+  font-size: 1.3em;
+  color: #111;
+}
+
+.card p {
+  font-size: 1em;
+  color: #333;
+}
+
+/* Responsive untuk layar kecil */
+@media (max-width: 768px) {
+  .card-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* Hover tema warna */
+.header:hover {
+  background: linear-gradient(45deg, #000000, #444, #222, #000000);
+  background-size: 300% 300%;
+  animation: themeShift 3s ease infinite;
+}
+
+/* Animasi perubahan warna */
+@keyframes themeShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Section styling */
+section {
+  padding: 80px 50px;
+  border-bottom: 1px solid #ddd;
+}
+
+section h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: #000;
+}
+
+section p, section ul {
+  font-size: 1.1em;
+}
+
+/* Footer */
+footer {
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .header a {
+    margin: 10px 0;
+  }
+
+  section {
+    padding: 50px 20px;
+  }
+}
